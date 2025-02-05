@@ -13,6 +13,9 @@ then
     echo "pnpm could not be found"
     echo "Installing pnpm"
     npm i -g pnpm
+else
+    echo "pnpm is already installed"
+    echo ""
 fi
 
 echo "Checking if pnpm is already being used"
