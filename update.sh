@@ -5,6 +5,8 @@ git clone https://github.com/satyam147/ModyoVue3Migration.git ModyoVue3Migration
 mv ModyoVue3Migration/Vue3Migration .
 rm -rf ModyoVue3Migration
 
+npm i -g pnpm
+
 if [[ -f "package-lock.json" ]]
 then
   echo "Updating project to use pnpm"
