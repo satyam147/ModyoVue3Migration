@@ -49,7 +49,7 @@ pnpm install --ignore-scripts
 echo ""
 echo "Removing unused dependencies"
 echo ""
-pnpm remove  jest jest-sonar-reporter vue-template-compiler @vue/vue2-jest babel-jest @vue/cli-plugin-unit-jest
+pnpm remove  jest jest-sonar-reporter vue-template-compiler @vue/vue2-jest babel-jest @vue/cli-plugin-unit-jest vuex
 
 echo ""
 echo "Installing new dependencies"
