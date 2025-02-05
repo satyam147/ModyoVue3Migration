@@ -7,14 +7,17 @@ rm -rf ModyoVue3Migration
 
 npm i -g pnpm
 
-if [[ -f "package-lock.json" ]]
+if [[ -f "pnpm-lock.yaml" ]]
 then
-  echo "Updating project to use pnpm"
-  echo "Removing node_modules and package-lock.json"
-  rm -r node_modules
-  rm package-lock.json
-else
   echo "Already using pnpm"
+elif [[ -f "package-lock.json" ]]
+ then
+ echo "Updating project to use pnpm"
+   echo "Removing node_modules and package-lock.json"
+   rm -r node_modules
+   rm package-lock.json
+else
+  echo "No lock file found"
 fi
 
 echo "Installing dependencies"
