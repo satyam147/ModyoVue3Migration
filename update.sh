@@ -1,5 +1,3 @@
-update.sh
-
 #!/bin/bash
 
 echo "Downloading migration files"
