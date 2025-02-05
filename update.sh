@@ -2,9 +2,7 @@
 
 echo "Downloading migration files"
 git clone https://github.com/satyam147/ModyoVue3Migration.git ModyoVue3Migration
-
 mv ModyoVue3Migration/Vue3Migration .
-
 rm -rf ModyoVue3Migration
 
 if [[ -f "package-lock.json" ]]
@@ -86,5 +84,25 @@ for f in src/**/**/*.js; do
 done
 
 echo "Basic migration completed"
+
+echo "Replace scripts with below in package.json"
+echo ""
+echo "\"scripts\": {
+    \"serve\": \"vite\",
+    \"build\": \"npm run lint & npm run style:check & npm run type-check && vue-cli-service build\",
+    \"test:unit\": \"vitest --reporter verbose\",
+    \"lint\": \"eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore\",
+    \"i18n:report\": \"vue-i18n-extract report --vueFiles './src/**/*.?(js|vue)' --languageFiles './src/locales/**/*.json'\",
+    \"modyo-push\": \"npm run build && npm run push\",
+    \"test:coverage\": \"vitest run --coverage\",
+    \"style:check\": \"prettier --check src/\",
+    \"style:format": "prettier --write src/\",
+    \"type-check\": \"vue-tsc --build --force\",
+    \"build-and-push\": \"npm run build && npm run push\",
+    \"modyo-serve\": \"vite modyo-serve\",
+    \"push-publish\": \"modyo-cli push --publish\",
+    \"postinstall\": \"echo no-postinstall\"
+  },"
+
 echo "Please run pnpm run type-check and solve all the type issues"
 
