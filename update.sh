@@ -5,7 +5,7 @@ git clone https://github.com/satyam147/ModyoVue3Migration.git ModyoVue3Migration
 
 mv ModyoVue3Migration/Vue3Migration .
 
-rm -r ModyoVue3Migration
+rm -rf ModyoVue3Migration
 
 if [[ -f "package-lock.json" ]]
 then
